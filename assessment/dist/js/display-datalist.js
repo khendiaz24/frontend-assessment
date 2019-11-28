@@ -5,6 +5,7 @@ var tab_list = new Vue({
   el: '.tab_list',
   data: {
     posts: [],
+    isActive: false
   },
   mounted() {
     axios.get('dist/js/data.json')
@@ -16,6 +17,8 @@ var tab_list = new Vue({
   },
   methods: {
     method_1: function(ev, i){
+      this.isActive = !this.isActive;
+      
       $('.tab__header').removeClass('active');
       $('.tab__header').eq(i).addClass('active');
 
@@ -35,7 +38,6 @@ var accordion = new Vue({
     axios.get('dist/js/data.json')
       .then(response => {
         this.posts = response.data
-        
       }).catch(error => {
         console.log(error);
       });
@@ -43,7 +45,6 @@ var accordion = new Vue({
   methods: {
     method_2: function(ev, i){
       var _this = $('.accordion__list');
-
       if(_this.eq(i).hasClass('active')) {
         _this.eq(i).toggleClass('active');
       } else {

@@ -46,7 +46,10 @@
 		<div class="container mt-5 mb-5 d-block d-md-none">
 			<div class="accordion">
 				<div class="accordion__list" v-for="(post, index) in posts" :key="post.title" :class="{ 'active': index === 0 }" v-on:click="method_2($event, index)">
-					<h2 class="accordion__header" v-html="post.title"></h2>
+					<h2 class="accordion__header">
+						<span v-html="post.title"></span>
+						<i class="fas fa-chevron-down"></i>
+					</h2>
 					<div class="accordion__panel">
 						<div class="accordion__panel--content" v-html="post.content"></div>
 					</div>

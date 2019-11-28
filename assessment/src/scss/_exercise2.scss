@@ -61,16 +61,21 @@ li {
     &.active {
       h2 {
         background: darken($coBlue, 10%);
+
+        .fa-chevron-down {
+          @include transform(rotate(180deg));
+        }
       }
 
       .accordion__panel {
-        display: block;
-        // max-height: 200px;
+        max-height: 200px;
+        transition: max-height 300ms ease-in-out;
       }
     }
   }
 
   &__header {
+    position: relative;
     @include font-size(18px);
     padding: 10px;
     background: $coBlue;
@@ -80,21 +85,29 @@ li {
     margin-bottom: 0;
     border-bottom: 1px solid darken($coBlue, 5%);
 
+    .fa-chevron-down {
+      @include font-size(16px);
+      position: absolute;
+      top: 14px;
+      right: 10px;
+      @include transition(all 0.2s ease);
+    }
+    
+
     &:hover {
       background: darken($coBlue, 5%);
     }
   }
 
   &__panel {
-    display: none;
-    // max-height: 0;
+    max-height: 0;
     position: relative;
     overflow: hidden;
     @include font-size(15px);
     background: lighten($coLGray, 5%);
     border-left: 1px solid $coLGray;
     border-right: 1px solid $coLGray;
-    transition: max-height 250ms ease-in-out;
+    transition: max-height 300ms ease-in-out;
 
     &--content {
       padding: 20px;
