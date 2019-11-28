@@ -1,40 +1,17 @@
-Introduction
----
-Thanks for taking the time to complete this frontend technical assessment. We will be focusing on software quality (scalability, readability, maintainability, etc.) and your eye for detail. You may include any libraries. Bonus points if SASS/LESS is used and jQuery is not used.
+Thank you for giving me opportunity to take the exam
 
-Exercise 1
----
-Build a responsive page based on the designs.
+Here's the tools and libraries I used for the exam
 
-##### Requirements
-1. Match the designs exactly.
-2. Needs to be responsive.
+* The exam is inside the folder 'assessment'
+* I used Bootstrap 4 for css grid
+* I used SASS as pre-processor
+* I used Vue js to display data from json file
+* I used Gulp js as build tools for better management, optimization, testing etc.
+* The json file I used is under dist > js > data.json
+* Add CSS animation to spice up the design
 
-##### Designs
-* exercise1-desktop.png
-* exercise1-mobile.png
-
-##### Assets
-* Desktop banner - http://via.placeholder.com/1920x650
-* Mobile banner - http://via.placeholder.com/600x600
-* Content images - http://via.placeholder.com/400x300
-
-Exercise 2
----
-Read the `data.json` file and display the data as tabs on desktop and an accordion on mobile.
-
-##### Requirements
-1. Display data in tabs on desktop.
-2. Display data in an accordion on mobile.
-3. Only 1 accordion/tab should be open at a time.
-4. Open the first accordion/tab on load.
-5. If the open accordion is selected, close it.
-
-###### Bonus points
-* Improve the user experience with meaningful animations/transitions.
-* Design and styling.
+Bonus points
 * Explain why the result of `('b' + 'a' + + 'a' + 'a').toLowerCase()` is `banana`.
+* ('b' + 'a' + + 'a' + 'a') = ('ba' + NaN + 'a') ==> +'a' is NaN because '+' represents sum which except to be a number and not a character.
+* adding toLowerCase make it banana
 
-Submission
----
-We recommend submitting your completed assessment as a forked repository. Please replace README content with instructions and relevant documentation.

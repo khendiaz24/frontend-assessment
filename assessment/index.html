@@ -1,0 +1,69 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Frontend Assessment</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<!-- Fontawesome -->
+<link rel="stylesheet" href="dist/css/fontawesome.css" media="all"/>
+
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" href="dist/css/style.min.css" media="all"/>
+<script src="dist/js/lib/modernizr-2.8.3.min.js"></script>
+<script src="dist/js/pace.min.js"></script>
+</head>
+
+<body>
+<section id="main-container">
+	<header></header>
+	<section id="main-wrapper" class="z-index">
+		<!-- Banner -->
+		<div class="banner position-relative">
+			<img class="img-auto desktop d-none d-sm-block" src="http://via.placeholder.com/1920x650" width="" height="" alt="" title="">
+			<img class="img-auto mobile d-block d-sm-none" src="http://via.placeholder.com/600x600" width="" height="" alt="" title="">
+			<div class="banner__caption position-absolute w-100 h-100 zx3 p-3">
+				<h1 class="fadeUp">Hello Developer!</h1>
+				<h2 class="fadeUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+			</div>
+		</div>
+		<!-- End of banner -->
+
+		<!-- Tabs -->
+		<div class="tabs container mt-5">
+			<div id="data_list" class="row accordion">
+				<div class="col-12 col-md-6 col-lg-4 mb-5 fadeUp" v-for="post in posts.slice(0, 3)" :key="post.title">
+					<div class="tabs__container h-100">
+						<img class="img-auto" src="http://via.placeholder.com/400x300" alt="">
+						<div class="tabs__holder">
+							<div class="tabs__content mt-3 mb-3">
+								<div v-html="post.content"></div>
+							</div>
+							<div class="tabs__btn text-center">
+								<a href="#" class="btns">READ MORE</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>
+<footer></footer>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="dist/js/display-datalist.js"></script>
+<script src="dist/js/display-datalist2.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<!-- Custom js -->
+<script src="dist/js/all.min.js"></script>
+</body>
+</html>
