@@ -1,0 +1,104 @@
+// Tab CSS
+.exercise2 {
+  .container {
+    max-width: 1110px;
+  }
+}
+
+.tab {
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__header {
+    flex-grow: 1;
+
+    h2 { 
+      @include font-size(18px);
+      padding: 10px;
+      cursor: pointer;
+      margin-bottom: 0;
+      border: 1px solid darken($coBlue, 5%);
+      background: $coBlue;
+      color: $coWhite;
+      @include transition(all 0.3s ease);
+
+      &:hover {
+        background: darken($coBlue, 5%);
+      }
+    }
+
+    &.active {
+      h2 { background: darken($coBlue, 10%); }
+    }
+  }
+
+  &__panel {
+    @include font-size(15px);
+    padding: 20px;
+    background: lighten($coLGray, 5%);
+    border: 1px solid $coLGray;
+  }
+
+  &__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+li {
+  list-style: disc;
+  margin-left: 15px;
+}
+
+//Accordion CSS
+.accordion {
+  &__list {
+    &.active {
+      h2 {
+        background: darken($coBlue, 10%);
+      }
+
+      .accordion__panel {
+        display: block;
+        // max-height: 200px;
+      }
+    }
+  }
+
+  &__header {
+    @include font-size(18px);
+    padding: 10px;
+    background: $coBlue;
+    color: $coWhite;
+    cursor: pointer;
+    @include transition(all 0.3s ease);
+    margin-bottom: 0;
+    border-bottom: 1px solid darken($coBlue, 5%);
+
+    &:hover {
+      background: darken($coBlue, 5%);
+    }
+  }
+
+  &__panel {
+    display: none;
+    // max-height: 0;
+    position: relative;
+    overflow: hidden;
+    @include font-size(15px);
+    background: lighten($coLGray, 5%);
+    border-left: 1px solid $coLGray;
+    border-right: 1px solid $coLGray;
+    transition: max-height 250ms ease-in-out;
+
+    &--content {
+      padding: 20px;
+    }
+  }
+
+}

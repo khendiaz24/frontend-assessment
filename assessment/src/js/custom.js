@@ -49,7 +49,7 @@ var globalFunc = {
 
 $(window).resize(function () {
   globalFunc.init();
-  globalFunc.accordion();
+  // globalFunc.accordion();
 });
 
 $(document).ready(function () {
@@ -60,7 +60,7 @@ $(document).ready(function () {
 
 $(window).on('load', function () {
   globalFunc.init();
-  globalFunc.accordion();
+  // globalFunc.accordion();
 });
 
 // preloader once done

@@ -1,0 +1,168 @@
+// Banner
+.banner {
+  &:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: rgba(0,0,0,0.4);
+  }
+
+  &__caption {
+    display: flex;
+    top: 0;
+    left: 0;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    color: $coWhite;
+
+    h1 {
+      @include font-size(60px);
+      font-weight: bold;
+    }
+
+    h2 {
+      @include font-size(25px);
+      letter-spacing: 2px;
+    }
+
+    @include breakpoint(md) {
+      h1 {
+      @include font-size(40px);
+    }
+
+    h2 {
+      @include font-size(20px);
+    }
+    }
+  }
+
+  @include breakpoint(xl) {
+    .desktop {
+      height: 450px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+//Tabs
+.grid {
+  &__container {
+    position: relative;
+    padding: 20px;
+    padding-bottom: 65px;
+    border: 1px solid $coLGray;
+    border-radius: 7px;
+    box-shadow: 0 0 2px 1px $coLGray;
+    @include transition(all 0.2s ease);
+
+    img {
+      border-radius: 7px;
+    }
+
+    &:hover {
+      @include transform(translateY(-10px));
+      box-shadow: 0 0 10px 4px $coLGray;
+    }
+  }
+
+  &__holder {
+    transition: max-height 350ms ease-in-out;
+  }
+
+  &__content {
+    @include font-size(16px);
+    text-align: center;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    @include breakpoint(md) {
+      @include font-size(14px);
+    }
+  }
+
+  &__btn  {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+  }
+
+  @include breakpoint(lg) {
+    max-width: 100%;
+  }
+
+  @include breakpoint(md) {
+    max-width: 400px;
+
+    &__container {
+      padding-bottom: 20px;
+    }
+
+    &__btn {
+      position: relative;
+      bottom: auto;
+    }
+
+    &__holder {
+      display: none;
+    }
+  }
+
+  // @include breakpoint(mdmin) {
+  //   .grid__holder {
+  //     display: block !important;
+  //     height: auto !important;
+  //   }
+  // }
+}
+
+// .open {
+//   .tabs__holder {
+//     display: block;
+//   }
+// }
+
+// Buttons
+.btns {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  color: $coGray;
+  letter-spacing: 2px;
+  line-height: normal;
+  border: 2px solid $coGray;
+  outline: none;
+
+  &:hover {
+    background: $coGray;
+    color: $coWhite;
+  }
+}
+
+// animation
+
+.fadeUp {
+  opacity: 0;
+  @include animation(fadeUp 0.5s ease forwards);
+  animation-delay: 2000ms;
+    @for $i from 1 through 21{
+      &:nth-child(#{$i}){
+        animation-delay: $i * 100ms;
+      }
+    }
+}
+
+@include keyframes(fadeUp) {
+  0% { opacity: 0; @include transform(translateY(40px)); }
+  100% { opacity: 1; @include transform(translateY(0)); }
+}

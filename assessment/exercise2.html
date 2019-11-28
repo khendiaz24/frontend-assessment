@@ -22,20 +22,55 @@
 <body>
 <section id="main-container">
 	<header></header>
-	<section id="main-wrapper" class="z-index">
-		<!-- Banner -->
-		<div class="banner position-relative">
-			<img class="img-auto desktop d-none d-sm-block" src="http://via.placeholder.com/1920x650" width="" height="" alt="" title="">
-			<img class="img-auto mobile d-block d-sm-none" src="http://via.placeholder.com/600x600" width="" height="" alt="" title="">
-			<div class="banner__caption position-absolute w-100 h-100 zx3 p-3">
-				<h1 class="fadeUp">Hello Developer!</h1>
-				<h2 class="fadeUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
-			</div>
-		</div>
-		<!-- End of banner -->
+	<section id="main-wrapper" class="z-index exercise2">
 
 		<!-- Tabs -->
-		<div class="tabs container mt-5">
+		<div class="container mt-5 mb-5 d-none d-md-block">
+			<div class="tab_list">
+				<div class="tab">
+					<div class="tab__nav">
+						<div class="tab__header" v-for="(post, i) in posts" :key="post.title" :class="{ 'active': i === 0 }" v-on:click="method_1($event, i)">
+							<h2 v-html="post.title"></h2>
+						</div>
+					</div>
+					<div class="tab__panel">
+						<div class="tab__content" v-for="(post, i) in posts" :key="post.content" :class="{ 'active': i === 0 }">
+							<div v-html="post.content"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- accordion -->
+		<div class="container mt-5 mb-5 d-block d-md-none">
+			<div class="accordion">
+				<div class="accordion__list" v-for="(post, index) in posts" :key="post.title" :class="{ 'active': index === 0 }" v-on:click="method_2($event, index)">
+					<h2 class="accordion__header" v-html="post.title"></h2>
+					<div class="accordion__panel">
+						<div class="accordion__panel--content" v-html="post.content"></div>
+					</div>
+					</div>
+			</div>
+		</div>
+		
+		<!-- <div class="container data_list">
+
+			<tabs>
+				<tab name="Services" :selected="true">
+					<h1>What we do</h1>
+				</tab>
+				<tab name="Pricing">
+					<h1>How much we do it for</h1>
+				</tab>
+				<tab name="About Us">
+					<h1>Why we do it</h1>
+				</tab>
+			</tabs>
+		
+		</div> -->
+		
+		<!-- <div class="tabs container mt-5">
 			<div id="data_list" class="row accordion">
 				<div class="col-12 col-md-6 col-lg-4 mb-5 fadeUp" v-for="post in posts.slice(0, 3)" :key="post.title">
 					<div class="tabs__container h-100">
@@ -51,7 +86,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</section>
 </section>
 <footer></footer>
@@ -59,7 +94,6 @@
 <script src="https://unpkg.com/vue"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="dist/js/display-datalist.js"></script>
-<script src="dist/js/display-datalist2.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
